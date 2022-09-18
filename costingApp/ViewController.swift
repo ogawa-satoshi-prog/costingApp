@@ -23,22 +23,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     //計算ボタンが押された時の処理
     @IBAction func btnClick(_ sender: Any) {
-        let nGram1:Int = Int(grams1.text ?? "0")!
-        let  nGram2:Int = Int(grams2.text ?? "0")!
-        let nPrice1:Int = Int(price1.text ?? "0")!
-        let nPrice2:Int = Int(price2.text ?? "0")!
+        let nGram1:Double = Double(grams1.text ?? "0")!
+        let  nGram2:Double = Double(grams2.text ?? "0")!
+        let nPrice1:Double = Double(price1.text ?? "0")!
+        let nPrice2:Double = Double(price2.text ?? "0")!
         
         //計算
-        let result1 = nPrice1 / nGram1;
-        let strR1 = String(result1)
-        let result2 = nPrice2 / nGram2;
-        let strR2 = String(result2)
+        let result1:Double = nPrice1 / nGram1;
+        let strR1 = String(round(result1 * 10) / 10)
+        let result2:Double = nPrice2 / nGram2;
+        let strR2 = String(round(result2 * 10) / 10)
         
         //表示
         costValue1.text = strR1
-        costValue1.text = strR2
-        
-        
+        costValue2.text = strR2
     }
     
 }
